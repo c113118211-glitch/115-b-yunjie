@@ -61,7 +61,20 @@ flowchart LR
     H --> J
     I --> K
     J --> K
+
+    classDef critical fill:#ffcccc,stroke:#ff0000,stroke-width:3px,color:#000000;
+    class A,B,D,F,I,K critical;
+
+    linkStyle 0 stroke:#ff0000,stroke-width:3px;
+    linkStyle 2 stroke:#ff0000,stroke-width:3px;
+    linkStyle 4 stroke:#ff0000,stroke-width:3px;
+    linkStyle 7 stroke:#ff0000,stroke-width:3px;
+    linkStyle 10 stroke:#ff0000,stroke-width:3px;
 ```
+
+紅色節點及紅色箭頭代表本專案的關鍵路徑：
+
+**1 → 2 → 4 → 6 → 9 → 11**
 
 ## 四、甘特圖
 
@@ -85,6 +98,10 @@ gantt
     使用者測試     :crit, 2026-05-11, 25d
 ```
 
+甘特圖中紅色部分為關鍵路徑上的任務。
+
+> 註：由於題目未提供實際專案開始日期，因此甘特圖以 2026/01/01 作為假設開始日期，主要用於呈現各任務的先後關係及工期。
+
 ## 五、關鍵路徑
 
 本專案的關鍵路徑為：
@@ -95,8 +112,10 @@ gantt
 
 **研擬計畫 → 任務分配 → 程式開發 → 程式測試 → 系統測試 → 使用者測試**
 
-總工期：
+關鍵路徑總工期為：
 
 **1 + 4 + 70 + 30 + 25 + 25 = 155 天**
 
 因此，本專案最短完成時間為 **155 天**。
+
+關鍵路徑上的任何一項任務若發生延遲，都會直接影響整體專案的完工時間。
